@@ -1365,48 +1365,6 @@ print(old_to_new_idx(inpt_v = c("oui", "no", "eeee")))
 ```
 
 
-# `pattern_generator`
-
-pattern_generator
-
-
-## Description
-
-Allow to create patterns which have a part that is varying randomly each time.
-
-
-## Usage
-
-```r
-pattern_generator(base_, from_, nb, hmn = 1, after = 1, sep = "")
-```
-
-
-## Arguments
-
-Argument      |Description
-------------- |----------------
-`base_`     |     is the pattern that will be kept
-`from_`     |     is the vector from which the elements of the random part will be generated
-`nb`     |     is the number of random pattern chosen for the varying part
-`hmn`     |     is how many of varying pattern from the same base will be created
-`after`     |     is set to 1 by default, it means that the varying part will be after the fixed part, set to 0 if you want the varying part to be before
-`sep`     |     is the separator between all patterns in the returned value
-
-
-## Examples
-
-```r
-print(pattern_generator(base_="oui", from_=c("er", "re", "ere"), nb=1, hmn=3))
-
-# [1] "ouier" "ouire" "ouier"
-
-print(pattern_generator(base_="oui", from_=c("er", "re", "ere"), nb=2, hmn=3, after=0, sep="-"))
-
-# [1] "er-re-o-u-i"  "ere-re-o-u-i" "ere-er-o-u-i"
-```
-
-
 # `pattern_gettr`
 
 pattern_gettr
