@@ -1,0 +1,13 @@
+Package: edm1
+Title: Set of functions for vector manipulation
+Version: 2.0.0.0
+Authors@R: 
+    person("Julien", "Larget-Piet", , "julien.larget-piet@dreamRs.fr", role = c("aut", "cre"))
+Description: Provides a set of functions to manipulate data directly in vectors according to a lot of custom algorythms.
+License: GPL (==3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
+Imports:
+    stringr,
+    stringi
