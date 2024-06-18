@@ -1,4 +1,4 @@
-Package: edm1
+Package: edm1.vector
 Title: Set of functions for vector manipulation
 Version: 2.0.0.0
 Authors@R: 
