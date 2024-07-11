@@ -3946,13 +3946,15 @@ to_unique <- function(inpt_v, distinct_type = "suffix", distinct_val = "number",
 #'
 #' [1] 1 3 4 7
 #'
+#' print(old_to_new_idx_nested(from_v_val = c("oui", "no", "oui"), from_v_ids = c(1, 3), val = 1))
+#'
+#' [1] 1 5
+#' 
 #' @export
 
 old_to_new_idx_nested <- function(from_v_val = c(), from_v_ids = c(), val = 1){
-  print(val)
-  for (I in 1:length(from_v_val)){
+  for (I in 1:(length(from_v_ids) - 1)){
     if (nchar(from_v_val[I]) > val){
-      print(paste("passe", nchar(from_v_val[I])), val)
       for (i in 1:(nchar(from_v_val[I]) - val)){
         from_v_ids[(I + 1):length(from_v_ids)] = from_v_ids[(I + 1):length(from_v_ids)] + 1
       }
@@ -3960,5 +3962,4 @@ old_to_new_idx_nested <- function(from_v_val = c(), from_v_ids = c(), val = 1){
   }
   return(from_v_ids)
 }
-
 
