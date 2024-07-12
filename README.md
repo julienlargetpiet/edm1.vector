@@ -2278,3 +2278,46 @@ sus_val=c("pp", "as", "re"), rpl_val=c("oui", "non", "zz"), grep_=TRUE))
 ```
 
 
+# `wide_to_narrow_idx`
+
+wide_to_narow_idx
+
+
+## Description
+
+Allow to convert the indices of vector ('from_v_ids') which are related to the elements of a vector, to fit the newly established maximum character of the vector, see examples.
+
+
+## Usage
+
+```r
+wide_to_narrow_idx(from_v_val = c(), from_v_ids = c(), val = 1)
+```
+
+
+## Arguments
+
+Argument      |Description
+------------- |----------------
+`from_v_val`     |     is the input vector of elements, or just the total number of characters of the elementsq in the vector
+`from_v_ids`     |     is the input vector of indices
+`val`     |     is the value - 1 from which the number of character of an element is too high, so the indices in 'from_v_ids' will be modified
+
+
+## Examples
+
+```r
+print(wide_to_narrow_idx(from_v_val = c("oui", "no", "oui"), from_v_ids = c(4, 6, 9), val = 2))
+
+[1] 2 4 5
+
+print(wide_to_narrow_idx(from_v_val = c("oui", "no", "oui"), from_v_ids = c(4, 6, 9), val = 3))
+
+[1] 2 2 3
+
+print(wide_to_narrow_idx(from_v_val = c("oui", "no", "oui"), from_v_ids = c(4, 6, 9), val = 1))
+
+[1] 4 6 9
+```
+
+

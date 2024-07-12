@@ -3923,3 +3923,62 @@ to_unique <- function(inpt_v, distinct_type = "suffix", distinct_val = "number",
 }
 
 
+#' wide_to_narow_idx
+#'
+#' Allow to convert the indices of vector ('from_v_ids') which are related to the elements of a vector, to fit the newly established maximum character of the vector, see examples.
+#'
+#' @param from_v_val is the input vector of elements, or just the total number of characters of the elementsq in the vector
+#' @param from_v_ids is the input vector of indices
+#' @param val is the value - 1 from which the number of character of an element is too high, so the indices in 'from_v_ids' will be modified
+#'
+#' @examples
+#'
+#' print(wide_to_narrow_idx(from_v_val = c("oui", "no", "oui"), from_v_ids = c(4, 6, 9), val = 2))
+#'
+#'[1] 2 4 5 
+#'
+#' print(wide_to_narrow_idx(from_v_val = c("oui", "no", "oui"), from_v_ids = c(4, 6, 9), val = 3))
+#'
+#' [1] 2 2 3 
+#'
+#' print(wide_to_narrow_idx(from_v_val = c("oui", "no", "oui"), from_v_ids = c(4, 6, 9), val = 1))
+#'
+#' [1] 4 6 9
+#'
+#' @export
+
+wide_to_narrow_idx <- function(from_v_val = c(), from_v_ids = c(), val = 1){
+  cnt = 0
+  lst_cnt = 0
+  if (typeof(from_v_val) == "character"){
+    untl <- nchar(paste(from_v_val, collapse = ""))
+  }else{
+    untl <- from_v_val
+  }
+  I = 1
+  from_v_ids2 <- c(matrix(nrow = length(from_v_ids), ncol= 1, data = 0))
+  last_add <- TRUE
+  while (cnt <= untl){
+    if (from_v_ids[I] <= cnt){
+      if (last_add){
+        while ((from_v_ids[I]) <= cnt){
+          I = I + 1
+        }
+      }else{
+        while ((from_v_ids[I]) <= cnt){
+          from_v_ids2[I] = from_v_ids2[I] + 1
+          I = I + 1
+        }
+      }
+      from_v_ids2[I:length(from_v_ids2)] <- from_v_ids2[I:length(from_v_ids2)] + 1
+      last_add <- FALSE
+    }else{
+      from_v_ids2[I:length(from_v_ids2)] <- from_v_ids2[I:length(from_v_ids2)] + 1
+      last_add <- TRUE
+    }
+    cnt = cnt + val
+  }
+  return(from_v_ids2)
+}
+
+
