@@ -2285,7 +2285,7 @@ wide_to_narow_idx
 
 ## Description
 
-Allow to convert the indices of vector ('from_v_ids') which are related to the elements of a vector, to fit the newly established maximum character of the vector, see examples.
+Allow to convert the indices of vector ('from_v_ids') which are related to each characters of a vector, to fit the newly established maximum character of the vector, see examples.
 
 
 ## Usage

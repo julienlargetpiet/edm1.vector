@@ -3925,7 +3925,7 @@ to_unique <- function(inpt_v, distinct_type = "suffix", distinct_val = "number",
 
 #' wide_to_narow_idx
 #'
-#' Allow to convert the indices of vector ('from_v_ids') which are related to the elements of a vector, to fit the newly established maximum character of the vector, see examples.
+#' Allow to convert the indices of vector ('from_v_ids') which are related to each characters of a vector, to fit the newly established maximum character of the vector, see examples.
 #'
 #' @param from_v_val is the input vector of elements, or just the total number of characters of the elementsq in the vector
 #' @param from_v_ids is the input vector of indices
