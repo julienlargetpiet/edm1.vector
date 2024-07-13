@@ -3482,34 +3482,6 @@ nb2_follow <- function(inpt_v, inpt_idx, inpt_follow_v = c()){
   return(c(rtn, pattern_))
 }
 
-#' better_split
-#'
-#' Allows to split a string by multiple split, returns a vector and not a list.
-#' @param inpt is the input character
-#' @param split_v is the vector containing the splits
-#' @examples
-#'
-#' print(better_split(inpt = "o-u_i", split_v = c("-")))
-#' 
-#' [1] "o"   "u_i"
-#'
-#' print(better_split(inpt = "o-u_i", split_v = c("-", "_")))
-#'
-#' [1] "o" "u" "i"
-#'
-#' @export
-
-better_split <- function(inpt, split_v = c()){
-  for (split in split_v){
-    pre_inpt <- inpt
-    inpt <- c()
-    for (el in pre_inpt){
-      inpt <- c(inpt, unlist(strsplit(x = el, split = split)))
-    }
-  }
-  return(inpt)
-}
-
 #' pre_to_post_idx
 #'
 #' Allow to convert indexes from a pre-vector to post-indexes based on a current vector, see examples

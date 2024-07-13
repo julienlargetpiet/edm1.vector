@@ -2,11 +2,11 @@
 
 # Install
 
--> git clone https://github.com/julienlargetpiet/edm1
+-> git clone https://github.com/julienlargetpiet/edm1.vector
 
--> cd edm1
+-> cd edm1.vector
 
-edm1 > R
+edm1.vector > R
 
 R > library("devtools")
 
@@ -51,44 +51,6 @@ print(appndr(inpt_v=c(1:3), val="oui", hmn=5))
 print(appndr(inpt_v=c(1:3), val="oui", hmn=5, strt=1))
 
 #[1] "1"   "oui" "oui" "oui" "oui" "oui" "2"   "3"
-```
-
-
-# `better_split`
-
-better_split
-
-
-## Description
-
-Allows to split a string by multiple split, returns a vector and not a list.
-
-
-## Usage
-
-```r
-better_split(inpt, split_v = c())
-```
-
-
-## Arguments
-
-Argument      |Description
-------------- |----------------
-`inpt`     |     is the input character
-`split_v`     |     is the vector containing the splits
-
-
-## Examples
-
-```r
-print(better_split(inpt = "o-u_i", split_v = c("-")))
-
-[1] "o"   "u_i"
-
-print(better_split(inpt = "o-u_i", split_v = c("-", "_")))
-
-[1] "o" "u" "i"
 ```
 
 
